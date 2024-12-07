@@ -1,0 +1,17 @@
+To Run the program on AWS:
+ 
+1. Create S3 bucket add policies to get, put, list and delete objects in permissions. 
+- Upload the files : 1. Model_1_state.pth
+		      2. Model_2_state.pth
+in S3 bucket.
+
+2. Create an Event in SNS and add your mail id to get resultant notifications and not forget to confirm the mail id.
+
+3. Create IAM Roles to give access to S3 and SNS to Lambda Function and add those n configuration in AWS Lambda.
+
+4. Run a container using docker desktop and follow the push commands provided by AWS ECR to Push the docker image in your ECR lambda-repo.
+- Using AWS CLI in local system generate docker image of file my_lambda_function (it will download and push all the dependencies required to run the program on AWS).
+
+5. Add the latest image in AWS Lambda.
+
+6. You can test if the program is running by uploading a .csv file in this i uploaded Testing.csv or you can run a json Test Event code in AWS Lambda to run .csv file already present in S3 bucket.
